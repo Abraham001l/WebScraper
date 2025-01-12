@@ -30,15 +30,15 @@ def html_fetch(url):
 # ---------- Get Structure Functionality ----------
 def get_structure(html_content):
     html_content = html_content.split(' ')
-    allowed_chrs = ['.',',','-','(',')','\'','\"']
+    allowed_chrs = ['.',',','-','(',')',"'",'"','’']
     content = []
     for i in range(len(html_content)):
         print(i)
         valid = True
-        # print(html_content[i])
         for c in html_content[i]:
             if not(c in allowed_chrs or c.isalpha()):
-                # print(c)
+                print(c)
+                print(c in allowed_chrs)
                 valid = False
                 break
         if valid:
@@ -47,7 +47,7 @@ def get_structure(html_content):
     return content
 html_content = html_fetch(url)
 content = get_structure(html_content)
-fl = open('html_cont2.txt', 'w', encoding='utf-8')
+fl = open('vox_out.txt', 'w', encoding='utf-8')
 fl.write(content)
 fl.close()
 # " ' , . - ( ) 
