@@ -91,34 +91,69 @@ def add_ends(last_valid, cur_valid, html_content, i, content):
         end = ''.join(end)
         content.append(f'{end}\n')
         
-def parse_html(html_content):
-    # Splitting HTML Content
-    html_content = html_content.split(' ')
-    content = []
-    last_valid = False
+# def parse_html(html_content):
+#     # Splitting HTML Content
+#     html_content = html_content.split(' ')
+#     content = []
+#     last_valid = False
 
-    # Looping Through Whole HTML
-    for i in range(len(html_content)):
+#     # Looping Through Whole HTML
+#     for i in range(len(html_content)):
 
-        # Checking Section of HTML
+#         # Checking Section of HTML
+#         valid = validity_checker(html_content[i])
+
+#         # Appending Valid Data
+#         if valid:
+#             content.append(html_content[i].strip())
+#         add_ends(last_valid, valid, html_content, i, content)
+#         last_valid = valid
+#     content = " ".join(content)
+#     return content
+
+def window_end_check(section):
+    i = 0
+    valid_chrs = ["'",'’'] # And Letters
+    if len(section) > 0:
+        while i < len(section):
+            if not (section[i] in valid_chrs or section[i].isalpha()):
+                break
+            if i == len(section)-1:
+                break
+            i += 1
+        if section[i] == '.':
+            return True, i
+    return False, None
+
+def window_parser(html_content, i):
+    # Creating Window
+    window = [html_content[i]]
+    i += 1
+    add_window = False
+    
+    while i < len(html_content):
+        # Runs Through Validity Checker
         valid = validity_checker(html_content[i])
 
-        # Appending Valid Data
         if valid:
-            content.append(html_content[i].strip())
-        add_ends(last_valid, valid, html_content, i, content)
-        last_valid = valid
-    content = " ".join(content)
-    return content
-
-def window_parser():
-    None
-
+            window.append(html_content[i])
+        else:
+            print(html_content[i])
+            end_one, i_one = window_end_check(html_content[i])
+            end_minus_one, _ = window_end_check(html_content[i-1])
+            if end_minus_one:
+                return window, i+1
+            elif end_one:
+                window.append(html_content[i][0:i_one+1])
+                return window, i+1
+            else:
+                return None, i+1
+        i += 1
 
 def parse_html(html_content):
     # Splitting HTML Content
     html_content = html_content.split(' ')
-    content = []
+    valid_content = []
     i = 0
 
     while i < len(html_content):
@@ -126,9 +161,16 @@ def parse_html(html_content):
         # Checking Section of HTML
         valid = validity_checker(html_content[i])
 
-
-
-
+        # Expanding Window If Valid
+        if valid:
+            window, window_end_i = window_parser(html_content, i)
+            if window:
+                valid_content.append(' '.join(window))
+            i = window_end_i
+        else:
+            i += 1
+    valid_content = "\n".join(valid_content)
+    return valid_content
 
 html_content = html_fetch(url)
 content = parse_html(html_content)
