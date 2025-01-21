@@ -1,9 +1,6 @@
 import requests
 import ollama
 
-# ---------- Basic Setup ----------
-# ollama.pull('llama2') # Run For Updates
-
 # ---------- Basic Params ----------
 structure = 'vox'
 jina_key = 'r.jina.ai/'
