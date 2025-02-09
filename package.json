@@ -1,0 +1,30 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "scraper project",
+  "keywords": [
+    "webscraper"
+  ],
+  "homepage": "https://github.com/Abraham001l/WebScraper#readme",
+  "bugs": {
+    "url": "https://github.com/Abraham001l/WebScraper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abraham001l/WebScraper.git"
+  },
+  "license": "MIT",
+  "author": "Abraham Lira",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7"
+  }
+}
