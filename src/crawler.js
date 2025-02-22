@@ -159,9 +159,11 @@ async function gather_query_data(query, keywords) {
 // Example Usage
 // let content = await query_google('ikea is bad', 10, 0);
 // content = await extract_links(content);
-let url = "https://www.housedigest.com/1639830/ikea-gray-toilet-paper-cons/";
-let crawler_obj = new Crawler(url, ['ikea', 'toilet paper']);
+let url = "https://www.youtube.com/watch?v=Vx1Hk07tgXk";
+html = fetch_html(url);
+save_out(html, 'test1');
+// let crawler_obj = new Crawler(url, ['ikea', 'toilet paper']);
 // console.log(crawler_obj.crawl());
-console.log(gather_query_data('ikea is bad', ['ikea']));
+// console.log(gather_query_data('ikea is bad', ['ikea']));
 // const outputFile = 'nbc.txt'; // Replace with desired file name
 // save_out(content, outputFile);
