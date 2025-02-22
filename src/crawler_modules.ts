@@ -54,7 +54,6 @@ export class Scheduler {
 
         // Wait For Free Slot
         await this.get_free_slot(url);
-        console.log(url);
 
         // Update Active Thread & Remove From Queue
         this.active_threads++;
@@ -67,6 +66,7 @@ export class Scheduler {
 
 
     async get_free_slot(url: string): Promise<void> {
+        console.log(this.queue.indexOf(url));
         // Waiting Until Spot In Queue Is Avaliable
         while (this.active_threads>0 && this.queue.indexOf(url)==0) {
             this.wait(1000);
@@ -103,7 +103,7 @@ export class Crawler {
         // Attempting To Get HTML
         let html:string;
         try {
-            html = await this.schd.fetch_html(this.url);
+            html = await this.schd.request_url(this.url);
         } catch (e) {
             return crawled_cont.flat();
         }

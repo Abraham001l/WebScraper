@@ -25,7 +25,6 @@ async function query_unit_test(query: string, keywords: string[]): Promise<void>
 
     // Get Root URL's
     let root_urls = await get_google_roots('ikea', 2, 10, schd);
-    console.log(root_urls);
 
     // Launch Crawlers On Roots
     let crawled_cont = await launch_crawlers(root_urls, keywords, schd);
