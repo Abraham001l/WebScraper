@@ -1,0 +1,16 @@
+﻿"url"
+"https://www.vanitatis.elconfidencial.com/estilo/decoracion/2025-02-24/ikea-novedad-casa-elegante-ladmakare-disenador-interiores_4072212/"
+"https://www.vanitatis.elconfidencial.com/famosos/2025-02-24/alejandra-silva-richard-gere-fotos-viaje-hijos-maldivas_4072004/"
+"https://www.vanitatis.elconfidencial.com/famosos/2024-10-10/richard-gere-mujer-alejandra-lenguaje-corporal-gestos_3980237/"
+"https://www.vanitatis.elconfidencial.com/estilo/moda/2025-02-23/maria-zurita-susanna-griso-looks-lola-casademunt_4071400/"
+"https://www.vanitatis.elconfidencial.com/estilo/moda/2025-02-23/mejores-looks-ultimos-diez-anos-sag-awards_4069642/"
+"https://industri.kontan.co.id/news/bos-ikea-indonesia-tegaskan-investasi-jangka-panjang-begini-strateginya"
+"https://www.ciodive.com/news/Ikea-AI-governance-approach-EU-Act-Pact-compliance/740696/"
+
+[
+  'https://www.merca20.com/ikea-will-open-new-stores-in-the-united-states-check-when-and-where/',
+  'https://www.vanitatis.elconfidencial.com/estilo/decoracion/2025-02-24/ikea-novedad-casa-elegante-ladmakare-disenador-interiores_4072212/',
+  'https://www.google.co.id/intl/en/about/products',
+  'https://industri.kontan.co.id/news/bos-ikea-indonesia-tegaskan-investasi-jangka-panjang-begini-strateginya',
+  'https://www.ciodive.com/news/Ikea-AI-governance-approach-EU-Act-Pact-compliance/740696/'
+]

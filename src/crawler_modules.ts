@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { JSDOM } from 'jsdom';
 import fs from 'fs/promises'; // Use the Promises API of fs for async operations
 import { mkConfig, generateCsv, download } from "export-to-csv";
+import puppeteer from 'puppeteer';
 
 // Loading Environment Variables
 dotenv.config();
@@ -43,11 +44,69 @@ export class Scheduler {
         return response.data;
     }
 
+    // Helper function to perform auto-scrolling
+    async autoScroll(page: any) {
+        return page.evaluate(async () => {
+            return new Promise<void>((resolve) => {
+                let totalHeight = 0;
+                const distance = 100;
+                const timer = setInterval(() => {
+                    const scrollHeight = document.body.scrollHeight;
+                    window.scrollBy(0, distance);
+                    totalHeight += distance;
+
+                    // If we've scrolled past the scrollable area or reached a reasonable limit
+                    if (totalHeight >= scrollHeight || totalHeight > 30000) {
+                        clearInterval(timer);
+                        resolve();
+                    }
+                }, 100);
+            });
+        });
+    }
+
+    async fetch_forum(url: string): Promise<string> {
+        const API_KEY = process.env.API_KEY ?? "";
+        const proxyUrl = `http://proxy.scraperapi.com:8001?api_key=${API_KEY}`;
+
+        // Launch Puppeteer with ScraperAPI as proxy
+        const browser = await puppeteer.launch({
+            headless: false,
+            args: [
+                `--proxy-server=${proxyUrl}`
+            ]
+        });
+
+        const page = await browser.newPage();
+
+        // Set User-Agent (mimics real browser)
+        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36');
+
+        console.log(`Navigating to: ${url}`);
+        
+        // Navigate to the page
+        await page.goto(url, { waitUntil: 'networkidle2' });
+
+        // Scroll to the bottom of the page incrementally
+        console.log('Scrolling to the bottom of the page...');
+        await this.autoScroll(page);
+
+        // Wait for a fixed amount of time (15 seconds) for content to load
+        console.log('Waiting fixed time (15 seconds) for content to load...');
+        await new Promise(resolve => setTimeout(resolve, 10000000));
+        
+        // Extract whatever HTML has been loaded by now
+        console.log('Extracting page content...');
+        const htmlContent = await page.content();
+        
+        // Close the browser
+        await browser.close();
+        
+        return htmlContent;
+    }
+
 
     async request_url(url: string): Promise<string> {
-        // Printing Scheduler ID
-        console.log(this.id);
-
         // Add Url To Urls Visited & Queue
         this.scraped_urls.push(url);
         this.queue.push(url);
@@ -66,12 +125,39 @@ export class Scheduler {
 
 
     async get_free_slot(url: string): Promise<void> {
-        console.log(this.queue.indexOf(url));
+        // Make Sure URL In Queue
+        await this.url_in_queue(url);
+        
         // Waiting Until Spot In Queue Is Avaliable
         while (this.active_threads>0 && this.queue.indexOf(url)==0) {
             this.wait(1000);
         }
-        console.log(this.queue.indexOf(url));
+        return Promise.resolve();
+    }
+
+    async url_in_queue(url: string): Promise<void> {
+        try {
+            // Tracks Start Time
+            const start = performance.now();
+            let now = performance.now();
+
+            // Attempts To Add URL to Queue
+            while (!this.queue.includes(url)) {
+                // Check If Took Too Long
+                if (now-start>=6000) { // 6 Seconds
+                    throw new Error("Failed to add to queue");
+                }
+
+                // Attempt To Add URL
+                now = performance.now();
+                this.queue.push(url);
+
+                // Wait A Bit
+                this.wait(100);
+            }
+        } catch (e) {
+            throw e;
+        }
         return Promise.resolve();
     }
 

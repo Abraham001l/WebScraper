@@ -25,11 +25,14 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@types/puppeteer": "^5.4.7",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "export-to-csv": "^1.4.0",
     "jsdom": "^26.0.0",
     "node-fetch": "^3.3.2",
-    "pandas-js": "^0.2.4"
+    "pandas-js": "^0.2.4",
+    "puppeteer": "^24.3.0",
+    "ts-node": "^10.9.2"
   }
 }

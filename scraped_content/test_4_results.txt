@@ -1,0 +1,14 @@
+﻿"url"
+"https://www.manilatimes.net/2025/02/21/business/foreign-business/ikea-hopes-for-furniture-market-improvement/2059702"
+"https://chainstoreage.com/ikea-expand-small-store-format-2025"
+"https://www.ciodive.com/news/Ikea-AI-governance-approach-EU-Act-Pact-compliance/740696/"
+"https://www.merca20.com/ikea-will-open-new-stores-in-the-united-states-check-when-and-where/"
+
+
+[
+  'https://www.manilatimes.net/2025/02/21/business/foreign-business/ikea-hopes-for-furniture-market-improvement/2059702',
+  'https://chainstoreage.com/ikea-expand-small-store-format-2025',
+  'https://www.ciodive.com/news/Ikea-AI-governance-approach-EU-Act-Pact-compliance/740696/',
+  'https://lbbonline.com/news/durexs-playful-clapback-to-ikea-flips-the-script-for-late-night-marketing',
+  'https://www.merca20.com/ikea-will-open-new-stores-in-the-united-states-check-when-and-where/'
+]

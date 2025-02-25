@@ -1,10 +1,25 @@
 ﻿"url"
-"https://www.lrt.lt/naujienos/lietuvoje/2/2278047/nauseda-apie-ikea-padegima-vilniuje-sabotazo-aktai-gali-kartotis"
+"https://www.merca20.com/ikea-will-open-new-stores-in-the-united-states-check-when-and-where/"
+"https://www.merca20.com/category/english/"
+"https://campaignme.com/al-futtaim-ikea-campaign-shows-love-that-stands-the-test-of-time/"
+"https://campaignme.com/category/pitches/"
+"https://www.ingka.com/newsroom/ikea-reinvents-home-shopping-with-smart-new-app-features/"
 "https://www.designrush.com/news/ikea-canada-and-rethink-target-late-night-scrollers-with-u-up-campaign"
-"https://www.famouscampaigns.com/2025/02/ikea-canada-slides-into-dms-with-a-dreamy-surprise-for-insomniacs/"
-"https://www.famouscampaigns.com/"
-"https://www.famouscampaigns.com/category/examples/"
-"https://www.tv3.lt/naujiena/gyvenimas/ikea-pradeda-kepti-picas-kaina-nustebins-visus-n1352674"
-"https://www.cjwwradio.com/2025/02/22/ikea-sleep-survey-reveals-whos-getting-the-best-and-worst-sleeps-across-the-globe/"
-"https://www.cjwwradio.com/news"
-"https://www.thehindu.com/business/quality-norms-for-furniture-set-to-be-next-big-challenge-for-ikea/article69242561.ece"
+
+[
+  'https://www.manilatimes.net/2025/02/21/business/foreign-business/ikea-hopes-for-furniture-market-improvement/2059702',
+  'https://chainstoreage.com/ikea-expand-small-store-format-2025',
+  'https://www.ciodive.com/news/Ikea-AI-governance-approach-EU-Act-Pact-compliance/740696/',
+  'https://lbbonline.com/news/durexs-playful-clapback-to-ikea-flips-the-script-for-late-night-marketing',
+  'https://www.merca20.com/ikea-will-open-new-stores-in-the-united-states-check-when-and-where/',
+  'https://www.marketing-interactive.com/ikea-sends-late-night-naughty-u-up-dm-to-insomniacs',
+  'https://www.retaildive.com/news/ikea-eight-us-stores-store-concept-spring-summer-pennsylvania-maryland-california/740607/',
+  'https://campaignme.com/al-futtaim-ikea-campaign-shows-love-that-stands-the-test-of-time/',
+  'https://www.ingka.com/newsroom/ikea-reinvents-home-shopping-with-smart-new-app-features/',
+  'https://www.apartmenttherapy.com/ikea-stall-hack-inspiration-37458987',
+  'https://www.ikea.com/us/en/newsroom/corporate-news/ikea-u-s-annual-summary-fy24-pube44ea3b0/',    
+-the-script-for-late-night-marketing',                             eeky-offer-for-late-night-scroller
+  'https://retail.economictimes.indiatimes.com/news/home-and-decor/furniture-and-decor/ikea-expands-in-north-india-with-first-fully-ou-the-script-for-late-night-marketitsourced-central-distribution-centre/118528083',
+  'https://www.designrush.com/news/ikea-canada-and-rethink-target-lfurniture-and-decor/ikea-expands-is/',ate-night-scrollers-with-u-up-campaign',                           re/118528083',                    ng',
+  'https://www.retailtouchpoints.com/features/news-briefs/ikea-planate-night-scrollers-with-u-up-campn-north-india-with-first-fully-outsourced-central-distribution-ces-8-new-smaller-format-stores-in-2025'
+] 
